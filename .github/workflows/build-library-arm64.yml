@@ -1,0 +1,42 @@
+name: Build library on Debian 12 ARM64
+
+on:
+  workflow_dispatch:
+  #push:
+  #  branches:
+  #    - main
+  #pull_request:
+  #  branches:
+  #    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - arch: aarch64
+            distro: ubuntu22.04
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+    - name: Build library on Debian 12 ARM64
+      uses: uraimo/run-on-arch-action@v2
+      id: runcmd
+      with:
+        arch: none
+        distro: none
+        base_image: ghcr.io/gershwin-os/builder-arm64:main
+        # Create an artifacts directory
+        setup: |
+          echo "my info: " `uname -a`  
+        # Set an output parameter `uname` for use in subsequent steps
+        run: |
+          make install
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: gershwin-library-arm64-main
+        path: /home/runner/work/library/library/gershwin-library-arm64.tar.gz
