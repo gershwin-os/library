@@ -1,4 +1,4 @@
-# Gershwin Library Tar Archive
+# Gershwin Library
 
 Essential system-wide preferences, user templates, and configuration for Gershwin. Dynamically installs assets into /Library and creates a tar archive for AMD64 or ARM64 used during ISO creation.
 
