@@ -21,3 +21,11 @@ sudo make install
 ```
 sudo make uninstall
 ```
+
+## Cleanup
+
+This command will remove the gershwin-library-$$ARCH.tar.gz:
+
+```
+sudo make clean
+```
