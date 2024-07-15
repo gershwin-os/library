@@ -20,7 +20,7 @@ install:
 		mkdir -p $(TARGET_DIR); \
 		$(FIND_DIRS) | xargs -I {} cp -R {} $(TARGET_DIR); \
 		echo "Creating tarball..."; \
-		ARCH=$(shell dpkg --print-architecture) && tar -czvf gershwin-library-$$ARCH.tar.gz -C /Library .; \
+		ARCH=$(shell dpkg --print-architecture) && tar -czvf gershwin-library-$$ARCH.tar.gz /Library .; \
 	fi
 
 uninstall:
