@@ -1,6 +1,6 @@
-# Gershwin Library Package
+# Gershwin Library Tar Archive
 
-This repository contains essential system wide preferences, user templates, and configuration for Gershwin.
+Essential system-wide preferences, user templates, and configuration for Gershwin. Dynamically installs assets into /Library and creates a tar archive for AMD64 or ARM64 used during ISO creation.
 
 ## Installation
 To install the Gershwin libraries package, follow these steps:
@@ -24,7 +24,7 @@ sudo make uninstall
 
 ## Cleanup
 
-This command will remove the gershwin-library-$$ARCH.tar.gz:
+This command will remove the gershwin-library-AMD64.tar.gz or gershwin-library-ARM64.tar.gz tar archive:
 
 ```
 sudo make clean
