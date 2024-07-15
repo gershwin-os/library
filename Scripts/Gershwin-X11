@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /System/Makefiles/GNUstep.sh
+
 # WINDOW MANAGEMENT
 defaults write NSGlobalDomain GSBackHandlesWindowDecorations 0
 defaults write NSGlobalDomain GSBackUsesNativeTaskbar 0
